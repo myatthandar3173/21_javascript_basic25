@@ -14,14 +14,29 @@
         // 変数を作って0を代入
         let count = 0;
         console.log(count); //コンソールにcountをを表示
-        let counter = document.querySelector('#counter');
+        let counter = document.querySelector('p#counter');
         // documentはHTMLのこと
         // CSSセレクターはCSSで使うセレクターのこと
         console.log(counter)  //pは入っている
+        //property
         counter.textContent = count;
 
         const plusBtn = document.querySelector('#plus');
         console.log(plusBtn);
+
+        plusBtn.addEventListener('click', function () {
+            console.log("クリックしたぞ!");
+            //countに+1する
+            // count = count + 1;
+            // console.log(count);
+            count++;
+            console.log(count);
+            counter.textContent = count;
+        })
+
+
+
+
 
 
         let a; //変数の宣言

@@ -85,7 +85,8 @@
     //配列から問題を取得し、表示
     let index = 0;
     questionElem.textContent = question[index];
-
+    let score = 0;
+    questionElem.textContent = question[index]
     //回答ボタンにクリックイベント登録
     respondBtn.addEventListener('click', function () {
         const answer = answerInput.value;
@@ -95,6 +96,7 @@
         //if文で　回答と解答
         if (answer === answers[index]) {
             resultMessage.textContent = '正解です';
+            score++;
         } else {
             resultMessage.textContent = '不正解です';
         }
@@ -102,11 +104,35 @@
         questionElem.textContent = question[index];
         answerInput.value = '';
 
+        if (index === question.length) {
+            questionElem.textContent = '3問中' + score + '正解です。';
+            console.log(score);
+        }
+
         console.log(answer);
     });
 
 
 </script>
+
+<script>
+    //文字列型
+    console.log('円周率は' + 3.14 + 'です。');
+    //文字列と数値の計算
+    console.log('計算結果：' + 1234 + 5678);
+    //数値の計算と文字列
+    console.log(123 + 456 + 'です。');
+    //文字列+(数値の計算)
+    console.log("計算結果：" + (123 + 456));
+    //文字列-数値
+    console.log('2' - 1);
+    console.log('2' * 1);
+    console.log('4' / 2);
+</script>
+
+
+
+
 <script>
     const interests = ['読書', '料理', 'キャンプ'];
     console.log(interests);

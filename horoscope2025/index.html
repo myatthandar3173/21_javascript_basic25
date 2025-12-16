@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>12星座占い</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🔮 12星座占い（12月）🔮</h1>
+
+    <div class="zodiac-container">
+        <div class="zodiac"><img src="./images/Aries.png" alt="おひつじ座"></div>
+        <div class="zodiac"><img src="./images/Taurus.png" alt="おうし座"></div>
+        <div class="zodiac"><img src="./images/Gemini.png" alt="ふたご座"></div>
+        <div class="zodiac"><img src="./images/Cancer.png" alt="かに座"></div>
+        <div class="zodiac"><img src="./images/Leo.png" alt="しし座"></div>
+        <div class="zodiac"><img src="./images/Virgo.png" alt="おとめ座"></div>
+        <div class="zodiac"><img src="./images/Libra.png" alt="てんびん座"></div>
+        <div class="zodiac"><img src="./images/scorpio.png" alt="さそり座"></div>
+        <div class="zodiac"><img src="./images/Sagittarius.png" alt="いて座"></div>
+        <div class="zodiac"><img src="./images/Capricorn.png" alt="やぎ座"></div>
+        <div class="zodiac"><img src="./images/Aquarius.png" alt="みずがめ座"></div>
+        <div class="zodiac"><img src="./images/Pisces.png" alt="うお座"></div>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        const fortunes = [
+            "今月は新しいチャンスが舞い込む時期です。焦らず一つずつ行動すれば成果が見えてきます。周囲との調和を意識すると運気がさらに上がります。自分らしさを大切に。",
+            "落ち着いた時間が増えそうな月。小さな幸せに気づくことで心が満たされます。丁寧な行動が運気を高め、良い知らせが舞い込む予感があります。",
+            "人間関係が良好になり、コミュニケーションが活発になります。軽い行動や気づきが成功へのヒントにつながり、楽しく過ごせる一ヶ月になりそうです。",
+            "感情が動きやすい時期ですが、自分のペースを守ることで心が安定します。信頼できる人との時間があなたに良い影響を与えてくれます。",
+            "あなたの魅力が輝く月。積極的な行動が結果につながります。迷っていることがあれば、勇気を出して一歩踏み出すとよい方向へ向かいます。",
+            "整理整頓や心のリセットに向いています。ルールを見直すことで新しい流れが生まれ、生活が整う充実した時間になるでしょう。",
+            "バランスよく物事が進み、穏やかに過ごせる月。悩んでいたことも自然と解決していくので焦らず、丁寧に進めると良い結果になります。",
+            "集中力が上がり、努力が実りやすい月。隠れていた才能や可能性が開花するタイミングです。信念を大切にするとプラスの結果になります。",
+            "冒険心が高まり、新しい一歩を踏み出すチャンスが訪れます。刺激的な出来事があなたの未来につながる種となるでしょう。",
+            "責任感が増し、周囲から頼られることが多くなります。積み重ねてきた努力が評価され、自信を持って行動できる一ヶ月となりそうです。",
+            "自由な発想が幸運を呼びます。新しい考えや視点があなたに良い風を届け、楽しく変化が訪れる月です。",
+            "癒しと心の安定が訪れる月。優しさを大切にすることで、人間関係や気持ちがより豊かになります。大切な人との絆が深まる時間です。"
+        ];
+
+        const numbers = [3, 5, 11, 14, 17, 21, 24, 29, 33, 40, 55, 99];
+        const items = ["腕時計", "白いコップ", "キーホルダー", "青いノート", "ストール", "イヤホン", "黒い靴", "手鏡", "香水", "赤いアクセサリー", "スマホケース", "キャンドル"];
+
+        const zodiacImages = document.querySelectorAll(".zodiac img");
+        const resultBox = document.getElementById("result");
+
+        for (let i = 0; i < zodiacImages.length; i++) {
+            zodiacImages[i].addEventListener("click", function () {
+
+                zodiacImages.forEach(img => img.classList.remove("active"));
+                this.classList.add("active");
+
+                resultBox.innerHTML = `
+            <h2>${this.alt}の運勢</h2>
+            <p>${fortunes[i]}</p>
+            <p>✨ラッキーナンバー：<strong>${numbers[i]}</strong></p>
+            <p>✨ラッキーアイテム：<strong>${items[i]}</strong></p>
+        `;
+            });
+        }
+    </script>
+</body>
+
+</html>

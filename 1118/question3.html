@@ -1,0 +1,62 @@
+<h1>Color Buttons</h1>
+<div class="colorlist">
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+    <button id="yellow">Yellow</button>
+    <button id="pink">Pink</button>
+    <button id="purple">Purple</button>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.colorlist button');
+
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+
+            const color = buttons[i].id;
+
+            buttons.style.backgroundColor = color;
+        });
+    }
+
+
+    const age = Math.floor(Math.random() * 100);
+    let message;
+    if (age < 18) {
+        message = "未成年";
+    } else if (age >= 18 && age < 65) {
+        message = "成人";
+    } else {
+        message = "シニア";
+    }
+    console.log('年齢: ' + age + ' 歳, メッセージ: ' + message);
+
+
+
+</script>
+
+
+
+<h1>数字<span></span></h1>
+<a href="#" class="groupsite" target="_blank">Webサイト</a>
+<button>レッツゴー</button>
+<script>
+    const kawaiilabss = [
+        'https://fruitszipper.asobisystem.com/',
+        'https://candytune.asobisystem.com/',
+        'https://sweetsteady.asobisystem.com/',
+        'https://cutiestreet.asobisystem.com/',
+    ];
+    document.querySelector('button').addEventListener('click', function () {
+        //0〜３の数値
+        const title = Math.floor(Math.random() * 4);
+        //必要な要素を取得
+        const h1inSpan = document.querySelector('h1 span');
+        h1inSpan.textContent = title;
+
+        //ここに記述します。
+
+        //ここまで
+    });
+</script>

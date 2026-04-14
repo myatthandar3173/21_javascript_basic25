@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スコープほか</title>
+</head>
+
+<body>
+    <script>
+        // function sample() {
+        //     const x = 10;
+        //     console.log(x);
+        // }
+        // sample();
+        // // console.log(x); // エラー
+
+        // if (true) {
+        //     const x = 10;
+        //     console.log(x);
+        // }
+        // // console.log(x); // エラー
+
+        // const z = 1;
+        // function doSomething() {
+        //     console.log(z);
+        // }
+        // if (true) {
+        //     console.log(z);
+        // }
+        // dosomething();
+
+
+
+
+        // const a = 1; //グローバルスコープ
+        // function doSomething1() {
+        //     const a = 2; //関数スコープ
+        //     console.log(a + '関数スコープ'); //関数スコープからaを参照
+        //     if (true) {
+        //         const a = 3; //ブロックスコープ
+        //         console.log(a + 'ブロックスコープ'); //ブロックスコープからaを参照
+        //     }
+        //     console.log(a + '関数スコープ'); //関数スコープからaを参照
+        // }
+        // doSomething1();
+        // function doSomething2() {
+        //     const b = 1; //関数スコープ
+        //     b = 2; //使うことができない。
+        // }
+        // doSomething2();
+
+
+
+
+        // const persona = {
+        //     name: 'アリス', //property
+        //     age: 20,
+        //     interest: ['料理'],
+        //     greet: function () {
+        //         console.log('こんにちは、');
+        //     },
+        // };
+        // person.greet();
+        // console.log(person.name);
+
+
+
+
+
+
+        // this
+        const person2 = {
+            name: 'Alice',
+            greet: function () {
+                console.log(`こんにちは、私は${this.name}です。`);
+            },
+        };
+        person2.greet();
+
+        person2.name = 'Bob';
+        person2.greet();
+        console.log(person2.name);
+
+
+
+        const interests = ['読書', '料理', 'キャンプ', '旅行'];
+        const count = interests.length;
+        console.log(count); //4
+        interests.push('散歩');
+        console.log(interests); //['読書', '料理', 'キャンプ', '散歩']
+        console.log(interests[3]);
+
+
+
+
+        const alphabet = ['A', 'B', 'C'];
+        const last = alphabet.pop();
+        console.log(last); //C
+        console.log(alphabet); //['A', 'B']
+
+
+
+
+
+        const fruits = ['りんご', 'バナナ', 'オレンジ'];
+        const check1 = fruits.includes('りんご');
+        console.log(check1);
+        const check2 = fruits.includes('ぶどう');
+        console.log(check2);
+
+
+
+
+
+
+        const join = interests.join('と');
+        console.log(join);
+
+
+
+        const string = '読書&料理&キャンプ';
+        const split = string.split('&');
+        console.log(split);
+
+    </script>
+</body>
+
+</html>
